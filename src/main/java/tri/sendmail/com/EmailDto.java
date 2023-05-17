@@ -1,5 +1,7 @@
 package tri.sendmail.com;
 
+import com.alibaba.fastjson.*;
+
 /**
  * @ClassName EmailDto
  * @Description
@@ -19,6 +21,86 @@ public class EmailDto {
     private String cC;
     private String content;
 
+    public String getServerName() {
+        return serverName;
+    }
+
+    public void setServerName(String serverName) {
+        this.serverName = serverName;
+    }
+
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public String getcC() {
+        return cC;
+    }
+
+    public void setcC(String cC) {
+        this.cC = cC;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     /**
       * @Author mzg
       * @Description
@@ -28,7 +110,6 @@ public class EmailDto {
       **/
     @Override
     public String toString() {
-        // 原方法使用的是JSON格式字符串，在此临时修改返回值类型
-        return this.toString();
+        return JSONObject.toJSONString(this);
     }
 }
